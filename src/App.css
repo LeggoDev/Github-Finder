@@ -13,6 +13,34 @@
   font-family: 'Space Mono', sans-serif;
 }
 
+.text-white {
+  color: #ffffff;
+}
+
+.text-dark {
+  color: #4b6a9b;
+}
+
+.text-white::placeholder {
+  color: #ffffff;
+}
+
+.text-dark::placeholder {
+  color: #4b6a9b;
+}
+
+.m-100 {
+  margin: 0 5rem;
+}
+
+.low-opacity {
+  opacity: 0.5;
+}
+
+.mb-19 {
+  margin-bottom: 1.25rem;
+}
+
 header,
 .Search,
 .User {
@@ -34,6 +62,7 @@ header h1 {
 }
 
 header section {
+  cursor: pointer;
   width: 5.625rem;
   display: flex;
   align-items: center;
@@ -68,6 +97,13 @@ header section {
 
 .Search section {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Search div {
+  display: flex;
   align-items: center;
 }
 
@@ -76,13 +112,18 @@ header section {
   margin-right: 1.5rem;
 }
 
-.Search section span {
+.Search section input[type='text'],
+.Search section input::placeholder {
+  font-family: 'Space Mono', sans-serif;
+  outline: none;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
+  border: none;
+  width: 16rem;
 }
 
-.Search button {
+.Search input[type='submit'] {
   border: none;
   cursor: pointer;
   background: #0079ff;
@@ -94,8 +135,245 @@ header section {
   padding: 0.781rem 1.5rem;
 }
 
+.Search input[type='submit']:hover {
+  background: #60abff;
+}
+
+.Search .error {
+  font-family: 'Space Mono';
+  margin-right: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #f74646;
+}
+
 .User {
   padding: 3rem;
   margin-top: 1.5rem;
-  height: 27.813rem;
+}
+
+.User .informations {
+  display: flex;
+  align-items: flex-start;
+}
+
+.User .informations .avatar {
+  margin-top: 0.25rem;
+  margin-right: 2.313rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+}
+
+.User .header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.User .header section span {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #0079ff;
+}
+
+.User .header h2 {
+  font-weight: 700;
+  font-size: 1.625rem;
+  line-height: 2.438rem;
+}
+
+.User .header .date {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  text-align: right;
+}
+
+.User .date {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.User .bio,
+.User .repos,
+.User .links {
+  margin-left: 10rem;
+}
+
+.User .bio {
+  margin-top: -3rem;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.User .repos {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.User .repos span {
+  font-weight: 400;
+  font-size: 0.813rem;
+  line-height: 1.188rem;
+}
+
+.User .repos p {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.User .links {
+  width: 29.688rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.User .links div {
+  width: 13.125rem;
+  display: flex;
+}
+
+.User .links div img {
+  margin-right: 1.25rem;
+}
+
+.User .links div span {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+@media screen and (max-width: 768px) {
+  header,
+  .Search,
+  .User {
+    width: 35.625rem;
+  }
+
+  .User .bio,
+  .User .repos,
+  .User .links {
+    margin-left: 0;
+  }
+
+  .User .bio {
+    margin-top: 1rem;
+  }
+
+  .User .informations .avatar {
+    margin-top: 0;
+  }
+
+  .User .informations div {
+    flex-direction: column;
+  }
+
+  .User {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header,
+  .Search,
+  .User {
+    width: 21rem;
+  }
+
+  .Search section input[type='text'],
+  .Search section input::placeholder {
+    width: 11.5rem;
+    font-size: 13px;
+  }
+
+  .Search input[type='submit'] {
+    padding: 0.781rem 1.2rem;
+  }
+
+  .Search section img {
+    margin-left: 0rem;
+    margin-right: 0.563rem;
+  }
+
+  .User .links {
+    width: 29.688rem;
+    flex-direction: column;
+  }
+
+  .links div {
+    margin-bottom: 1.25rem;
+  }
+
+  .User {
+    padding: 1.5rem;
+  }
+
+  .User .informations .avatar {
+    width: 4.375rem;
+    height: 4.375rem;
+    margin-right: 1.219rem;
+  }
+
+  .repos {
+    justify-content: space-evenly;
+  }
+
+  .repos div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .Search section {
+    flex-direction: column;
+  }
+
+  .User .header {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .User .header h2 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .User .date {
+    font-size: 0.813rem;
+    line-height: 1.188rem;
+  }
+
+  .User .bio {
+    font-size: 0.813rem;
+    line-height: 1.5rem;
+  }
+
+  .User .repos {
+    padding: 1rem;
+  }
+
+  .User .repos div {
+    text-align: center;
+  }
+
+  .User .repos span {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .User .repos p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
